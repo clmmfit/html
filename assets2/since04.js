@@ -299,7 +299,7 @@ padding: 20px;
                          
            
                          
-                         
+                        
                          <!--------------------------->
                          
                            <div class="panel-body turn" turn-tab="4564560" style="padding-top: 0px;">
@@ -2379,48 +2379,34 @@ font-size: 9px;"><font color="green">`}` + kk(_0x1022xa.min) + `${'</font> -> <f
         window.location.reload();
 
     }
-    function coppy(text,min,max) {
-        var textArea = document.createElement("textarea");
-
-        // Place in the top-left corner of screen regardless of scroll position.
-        textArea.style.position = 'fixed';
-        textArea.style.top = 0;
-        textArea.style.left = 0;
-
-        // Ensure it has a small width and height. Setting to 1px / 1em
-        // doesn't work as this gives a negative w/h on some browsers.
-        textArea.style.width = '2em';
-        textArea.style.height = '2em';
-
-        // We don't need padding, reducing the size if it does flash render.
-        textArea.style.padding = 0;
-
-        // Clean up any borders.
-        textArea.style.border = 'none';
-        textArea.style.outline = 'none';
-        textArea.style.boxShadow = 'none';
-
-        // Avoid flash of the white box if rendered for any reason.
-        textArea.style.background = 'transparent';
-
-
-        textArea.value = text;
-
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-
-        try {
-            var successful = document.execCommand('copy');
-            var msg = successful ? 'successful' : 'unsuccessful';
-            alert('Đã sao chép số: ' + text+' chơi từ '+number_format(min)+' VNĐ đến '+number_format(max)+' VNĐ. Nếu bạn chuyển nhỏ hơn hoặc lớn thua sẽ bị hoàn tiền. '+(max > 3000000 ?'' :  '')+' ');
-        } catch (err) {
-            console.log('Oops, unable to copy');
-        }
-
-        document.body.removeChild(textArea);
+    function copyStringToClipboard(str) {
+        // Create new element
+        var el = document.createElement('textarea');
+        // Set value (string to be copied)
+        el.value = str;
+        // Set non-editable to avoid focus and move outside of view
+        el.setAttribute('readonly', '');
+        el.style = {
+            position: 'absolute',
+            left: '-9999px'
+        };
+        document.body.appendChild(el);
+        // Select text inside element
+        el.select();
+        // Copy text to clipboard
+        document.execCommand('copy');
+        // Remove temporary element
+        document.body.removeChild(el);
     }
 
+    
+        function coppy(text, min, max) {
+      copyStringToClipboard(text);
+              alert('Đã sao chép số: ' + text+' chơi từ '+number_format(min)+' VNĐ đến '+number_format(max)+' VNĐ. Nếu bạn chuyển nhỏ hơn hoặc lớn thua sẽ bị hoàn tiền. '+(max > 3000000 ?'' :  '')+' ');
+    
+            
+        }
+  
     /* wssss */
 function NhanQuaNgay() {
     let _0x791dx2 = $('#partnerId').val();
