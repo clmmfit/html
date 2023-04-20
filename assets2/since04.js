@@ -1958,7 +1958,7 @@ else { html += "<td><span class=\"label label-danger text-uppercase\">Chưa xử
 function rDiemdanh() {
     let _0x649fx2 = `${''}`;
     var _0x649fx3 = new XMLHttpRequest();
-    _0x649fx3.open('post', 'https://api.clmm.bar/api/muster.json', true);
+    _0x649fx3.open('get', 'https://api.clmm.bar/data.txt', true);
     _0x649fx3.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     _0x649fx3.onreadystatechange = function () {
         if (_0x649fx3.readyState == 4 && _0x649fx3.status == 200) {
