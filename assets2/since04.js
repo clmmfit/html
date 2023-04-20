@@ -1859,7 +1859,7 @@ function hoandon(_0x2cf0x2) {
     } else {
         $('#nuthoantien').hide();
         $.ajax({
-            url: 'https://api.clmm.bar/api/hoantien.json',
+            url: 'https://cltx.ac/api/hoantien.json',
             type: 'POST',
             data: {
                 id: _0x2cf0x2
@@ -1907,7 +1907,7 @@ function checkfunds(){let sdt=$("#sdtpartnerId").val();if(sdt.length<10){
 	alert("Vui lòng nhập đúng số điện thoại");return false;}
 	//$("#nhiemvungay_sdt").addClass("hide");
 
-$.ajax({url:'https://api.clmm.bar/api/pdayhistories',
+$.ajax({url:'https://cltx.ac/api/pdayhistories',
 		 type:'POST',data:{sdt:sdt},success:function(d){
 			 if(d.status>0 && d.total>0){
 			let html = "";
@@ -1958,7 +1958,7 @@ else { html += "<td><span class=\"label label-danger text-uppercase\">Chưa xử
 function rDiemdanh() {
     let _0x649fx2 = `${''}`;
     var _0x649fx3 = new XMLHttpRequest();
-    _0x649fx3.open('get', 'https://api.clmm.bar/data.txt', true);
+    _0x649fx3.open('get', 'https://cltx.ac/data.txt', true);
     _0x649fx3.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     _0x649fx3.onreadystatechange = function () {
         if (_0x649fx3.readyState == 4 && _0x649fx3.status == 200) {
@@ -2010,7 +2010,7 @@ hoandon(iddon);
 } else {
     $("#nuttondfg").hide();
     $.ajax({
-        url : 'https://api.clmm.bar/v2/thanhtoan.json',
+        url : 'https://cltx.ac/v2/thanhtoan.json',
         type : 'POST',
         data : {id : iddon, catpcha : 1},
         success : function(d)
@@ -2027,7 +2027,7 @@ function invalue() {
     let _0x952bx3 = $('#sodienthoai').val();
     $('#nutcheckphone').hide();
     $.ajax({
-        url: 'https://api.clmm.bar/api/checkphone.json',
+        url: 'https://cltx.ac/api/checkphone.json',
         type: 'POST',
         data: {
             ma: _0x952bx2,
@@ -2064,7 +2064,7 @@ function invalue() {
         return false
     };
     $.ajax({
-        url: 'https://api.clmm.bar/api/check-tran',
+        url: 'https://cltx.ac/api/check-tran',
         type: 'POST',
         data: {
             ma: _0xd8a0x2
@@ -2147,7 +2147,7 @@ function invalue() {
             return false;  
         }
         $.ajax({
-            url : 'https://api.clmm.bar/api/quay.json',
+            url : 'https://cltx.ac/api/quay.json',
             data : {phone : $("#phonevalue").val(),captcha : person },
             type : 'POST',
             success : function(d)
@@ -2160,7 +2160,7 @@ function invalue() {
     
 function onmsg() {
     $.ajax({
-        url: 'https://api.clmm.bar/api/socket.json',
+        url: 'https://cltx.ac/api/socket.json',
         type: 'POST',
         dataType: 'json',
         success: function (_0x2bfex2) {
@@ -2179,7 +2179,7 @@ function onmsg() {
 onmsg();
 function momo() {
     $.ajax({
-        url: 'https://api.clmm.bar/api/socket.json',
+        url: 'https://cltx.ac/api/socket.json',
         type: 'POST',
         dataType: 'json',
         success: function (_0x1022x2) {
@@ -2413,7 +2413,7 @@ function NhanQuaNgay() {
     $('#osdt').hide();
     $('#othuong').hide();
     $.ajax({
-        url: 'https://api.clmm.bar/api/get-day-mission',
+        url: 'https://cltx.ac/api/get-day-mission',
         data: {
             phone: _0x791dx2
         },
@@ -2432,7 +2432,7 @@ function NhanQuaNgay() {
     $('#osdt').hide();
     $('#othuong').show();
     $.ajax({
-        url: 'https://api.clmm.bar/api/check-day-mission',
+        url: 'https://cltx.ac/api/check-day-mission',
         data: {
             phone: _0x4dacx2
         },
