@@ -2157,27 +2157,7 @@ function invalue() {
             }
         })
     }
-    
-function onmsg() {
-    $.ajax({
-        url: 'https://cltx.ac/api/socket.json',
-        type: 'POST',
-        dataType: 'json',
-        success: function (_0x2bfex2) {
-            var _0x2bfex3 = '';
-            _0x2bfex2.topt.forEach(function (_0x2bfex4) {
-                _0x2bfex3 += `${'<p>- TOP '}` + _0x2bfex4.key + `${' : '}` + number_format(_0x2bfex4.gift) + `${' VNĐ</p>'}`;
-                $('#topplaygame2').html(_0x2bfex3)
-            });
-            $('#workrun').html(`${'<font color="white" style="text-shadow: 0 0 0.2em #ff0000, 0 0 0.2em #ff0000,  0 0 0.2em #ff0000"><b>'}` + _0x2bfex2.workrun + `${'</b></font>'}`);
-            $('#noidung_thongbao').html(_0x2bfex2.note);
-            $('#noidung_thongbaoakditmemay').html(_0x2bfex2.note);
-            $('#modal_thongbao').modal()
-        }
-    })
-}
-onmsg();
-function momo() {
+    function momo() {
     $.ajax({
         url: 'https://cltx.ac/api/socket.json',
         type: 'POST',
@@ -2373,6 +2353,26 @@ font-size: 9px;"><font color="green">`}` + kk(_0x1022xa.min) + `${'</font> -> <f
     })
 }
         momo();
+function onmsg() {
+    $.ajax({
+        url: 'https://cltx.ac/api/socket.json',
+        type: 'POST',
+        dataType: 'json',
+        success: function (_0x2bfex2) {
+            var _0x2bfex3 = '';
+            _0x2bfex2.topt.forEach(function (_0x2bfex4) {
+                _0x2bfex3 += `${'<p>- TOP '}` + _0x2bfex4.key + `${' : '}` + number_format(_0x2bfex4.gift) + `${' VNĐ</p>'}`;
+                $('#topplaygame2').html(_0x2bfex3)
+            });
+            $('#workrun').html(`${'<font color="white" style="text-shadow: 0 0 0.2em #ff0000, 0 0 0.2em #ff0000,  0 0 0.2em #ff0000"><b>'}` + _0x2bfex2.workrun + `${'</b></font>'}`);
+            $('#noidung_thongbao').html(_0x2bfex2.note);
+            $('#noidung_thongbaoakditmemay').html(_0x2bfex2.note);
+            $('#modal_thongbao').modal()
+        }
+    })
+}
+onmsg();
+
       setInterval(momo, 10000);
 
     function onError(evt) {
