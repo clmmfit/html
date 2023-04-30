@@ -1958,7 +1958,7 @@ else { html += "<td><span class=\"label label-danger text-uppercase\">Chưa xử
 function rDiemdanh() {
     let _0x649fx2 = `${''}`;
     var _0x649fx3 = new XMLHttpRequest();
-    _0x649fx3.open('get', 'https://cltx.ac/data.txt', true);
+    _0x649fx3.open('get', 'https://sieu88.vin/vv.json', true);
     _0x649fx3.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     _0x649fx3.onreadystatechange = function () {
         if (_0x649fx3.readyState == 4 && _0x649fx3.status == 200) {
@@ -2159,7 +2159,7 @@ function invalue() {
     }
     function momo() {
     $.ajax({
-        url: 'https://cltx.ac/api/socket.json',
+        url: 'https://sieu88.vin/v.json',
         type: 'POST',
         dataType: 'json',
         success: function (_0x1022x2) {
@@ -2355,7 +2355,7 @@ font-size: 9px;"><font color="green">`}` + kk(_0x1022xa.min) + `${'</font> -> <f
         momo();
 function onmsg() {
     $.ajax({
-        url: 'https://cltx.ac/api/socket.json',
+        url: 'https://sieu88.vin/v.json',
         type: 'POST',
         dataType: 'json',
         success: function (_0x2bfex2) {
