@@ -125,9 +125,6 @@ width: 100%;">
                     <button class="btn btn-default" server-action="change" server-id="1" server-rate="1">
                         Chẵn Lẻ 2
                     </button>
-                    <button class="btn btn-default" server-action="change" server-id="3443" server-rate="10000">
-                       Trò Chơi 2.000đ
-                    </button>
                     <button class="btn btn-default" server-action="change" server-id="2" server-rate="1">
                         Gấp 3
                     </button>
