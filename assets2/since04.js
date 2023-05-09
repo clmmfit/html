@@ -5,6 +5,34 @@
 function Since04_body()
 {
 $("body").html(`
+<style>
+.gifcode:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+
+}
+.btn-outline-success {
+    color: #28a745;
+    background-color: transparent;
+    background-image: none;
+    border-color: #28a745;
+}
+div#divfix {
+    display: block;
+    bottom: 9px;
+    left: -1px; 
+    position: fixed;
+    z-index: 3000;
+    color: #000;
+}
+      </style>
 <!------bostrpnotice thongbao----->
 
 
@@ -43,6 +71,36 @@ text-align: center;"></div><p class="">Chúc mừng <b id="phone_thang">since04<
 </div>
 </div>
 
+<!-- Modal Gifcode-->
+<div class="modal fade" id="gif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel"><b>Nhập Gifcode</b></h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" id="">
+
+  <div class="form-group">
+    <label for="phone-input">Số điện thoại:</label>
+    <input type="tel" class="form-control" id="phone-input" name="phone-input" placeholder="Nhập số điện thoại" required>
+  </div>
+  <div class="form-group">
+    <label for="code-input">Mã code:</label>
+    <input type="text" class="form-control" id="code-input" name="code-input" placeholder="Nhập mã code" required>
+  </div>
+  <button type="submit" id="submit-button" onclick="sendPostData()" class="btn btn-primary">Nhận</button>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đã hiểu !</button>
+  </div>
+</div>
+</div>
+</div>
 <div class="navbar">
     <div class="container">
         <div class="navbar-header">
@@ -1758,6 +1816,13 @@ margin: auto;">
     }
 </style>
 
+<div id="divfix" style="text-align: left;">
+ 
+<img class="btn gifcode shadow" src="https://minefc.com/logo/Gift.png" alt="Nhập" style="width:180px;height:60px;" data-toggle="modal" data-target="#gif">
+  
+</div>
+
+
 
 
 
@@ -1805,6 +1870,7 @@ background: aquamarine;">
     </div>
     </div>
 </footer>
+
 
 
 
@@ -1998,7 +2064,30 @@ function randomMusterShow(data) {
         $("#diemdanh_last").text(data[index] ? data[index] : "---");
     }, 400);
 }
-
+function sendPostData() {
+    
+    var phone = document.getElementById("phone-input").value;
+    var code = document.getElementById("code-input").value;
+    document.getElementById("submit-button").disabled = true;
+    if(phone < 11 || code == '' || phone == '')
+    {
+        document.getElementById("submit-button").disabled = false;
+        alert("Khong hop le");
+        return;
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://cltx.ac/api/check-gift-code");
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        alert(response.message);
+        document.getElementById("submit-button").disabled = false;
+      }
+    };
+    xhr.send(JSON.stringify({ phone: phone, code: code }));
+  }
+  
 function thanhtoan(iddon)
 {
 
