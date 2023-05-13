@@ -150,7 +150,7 @@ width: 100%;">
                 <p>
                     Trong lúc chờ đợi thì vào nhóm telegram chém gió nhá
                     <br>
-                    <a class="text-white" href="https://t.me/+TleLX-Y7Tfw3YTc1" target="_blank"><span
+                    <a class="text-white" href="https://t.me/clmmbaruytin" target="_blank"><span
                             class="btn btn-success text-uppercase">Chém Gió / Phát Code</span></a>
                               <a class="text-white" href="https://t.me/+lXcMtWUKmKQyOTdl" target="_blank"><span
                             class="btn btn-success text-uppercase">NHÓM THÔNG BÁO MÃ GIAO DỊCH MOMO	</span></a>
