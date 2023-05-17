@@ -1655,7 +1655,7 @@ padding: 20px;
                             <div id="kiemtra_magiaodich"> <br><br><br> <center> <b>Nếu quá 5 phút chưa nhận được tiền vui lòng dán mã vào đây kiểm tra.                      Nếu sai hạn mức sai nội dung hoặc chuyển vào số off hãy nhập mã vô đây để hoàn tiền. Lưu ý: Phát hiện spam hoàn tiền sẽ bị tịch thu</b>
                             <Br>
                            <br>
-                            <a style="" href="https://t.me/+s63n45cX00k3MjI9"> <span class="label label-success text-uppercase">BOX CHÁT TELEGRAM</span></a>
+                            <a style="" href="https://t.me/clmmbaruytin"> <span class="label label-success text-uppercase">BOX CHÁT TELEGRAM</span></a>
                              <a style="" href="https://t.me/+lXcMtWUKmKQyOTdl	"> <span class="label label-success text-uppercase">NHÓM THÔNG BÁO MÃ MD5</span></a>
                           </center></div>
                         </div>
