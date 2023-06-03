@@ -5,7 +5,13 @@
 function Since04_body()
 {
 $("body").html(`
+
 <style>
+.btn-primary2 {
+    color: #fff;
+    background-color: #78461a;
+    border-color: #78461a;
+}
 .gifcode:after {
     z-index: -1;
     content: "";
@@ -18,6 +24,11 @@ $("body").html(`
     border-radius: 10px;
 
 }
+#button5 {
+    display: inline-block;
+    float: left;
+    margin-right: 10px; /* Khoảng cách giữa các nút */
+  }
 .btn-outline-success {
     color: #28a745;
     background-color: transparent;
@@ -36,19 +47,6 @@ div#divfix {
 <!------bostrpnotice thongbao----->
 
 
-<div id="since04_notice" style="display:none;position: fixed;
-margin-left: auto;
-margin-right: auto;
-left: 0;
-top: 20%;
-right: 0;
-text-align: center;z-index:99999;"><div class="sprite_2" style="position: relative;
-margin-left: auto;
-margin-right: auto;
-left: 0;
-top: 20%;
-right: 0;
-text-align: center;"></div><p class="">Chúc mừng <b id="phone_thang">since04</b> vừa chiến thắng <b id="tienthang">since04</b> Vnđ. <Br> <small><font color="red" onclick="tatnotie()">[Tắt]</font></small></p></div>
 
 
 <!-- Modal -->
@@ -104,9 +102,12 @@ text-align: center;"></div><p class="">Chúc mừng <b id="phone_thang">since04<
 <div class="navbar">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <i class="fa fa-bars"></i>
-            </button>
+       
+
+<div id="back">  <button class="navbar-toggle btn btn-primary2" style="font-size: 10pt;" onclick="showThongBao()">Chơi MD5</button> </div>
+      
+            
+
             <a class="navbar-brand navbar-brand-image" href="/index.html">
                 <div class="hidden-xs">
                     <img src="assets2/concac.png" style="margin-top: -10px;
@@ -114,9 +115,11 @@ margin-bottom: 10px;
 width: 250px;" alt="clmmz.me Logo">
                 </div>
                 <div class="visible-xs">
+                
                     <img src="assets2/concac.png" style="margin-top: -5px;
 /* margin: 20px; */
 width: 200px;" alt="clmmz.me Logo">
+
                 </div>
             </a>
         </div>
@@ -159,6 +162,135 @@ width: 100%;">
         </div>
     </div>
 </div>
+<div class="container" id="thongbao2" style="display:none">
+    <div class="content">
+        <div class="content-container">
+
+
+        <div class="panel-body "  style="padding-top: 0px;">
+        <br>
+           <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover text-center">
+                    <thead>
+                        <tr role="row" class="bg-primary">
+                            <th class="text-center text-white" id="md5_phien">Phiên </th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody role="alert" aria-live="polite" aria-relevant="all" id="" class="">
+                 <tr> <td id="md5_soRd"></td>
+                 </tr>  
+                 <tr> <td id="md5_old"></td>
+                 </tr>  
+                 </tr>  
+                 <tr> <td id="md5_kq"></td>
+                 </tr>  
+                    </tbody>
+
+                </table>
+            </div> 
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover text-center">
+                    <thead>
+                        <tr role="row" class="bg-primary">
+                            <th class="text-center text-white" id="md5_phien_next">Phiên </th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody role="alert" aria-live="polite" aria-relevant="all" id="" class="">
+                 <tr> <td id="md5_soRd_next"></td>
+                 </tr>  
+                 <tr> <td id="md5_kq_next"></td>
+                
+                 </tr>  
+                 <tr> <td id="md5_now">     Thời gian hiện tại: <code id="time"></code></td>
+                 </tr>  
+                    </tbody>
+
+                </table>
+            </div> <br>
+            
+     
+        
+
+
+            </div>
+            <div class="mt-5">
+
+            <div class="text-center mb-3">
+                <h3 class="text-uppercase">LỊCH SỬ THẮNG</h3>
+            </div>
+
+
+            <center class="" style="width: 76%;
+margin: auto;">
+                <marquee><b id="msgnohu"></b></marquee>
+            </center>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover text-center">
+                    <thead>
+                        <tr role="row" class="bg-primary">
+                            <th class="text-center text-white">Thời gian</th>
+                            <th class="text-center text-white">ChatID</th>
+                            <th class="text-center text-white">Tiền cược</th>
+                            <th class="text-center text-white">Tiền nhận</th>
+                            <th class="text-center text-white">Phiên</th>
+                            <th class="text-center text-white">Nội dung</th>
+                            <th class="text-center text-white">trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody role="alert" aria-live="polite" aria-relevant="all" class="" id="load_data_play2"></tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+        <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-danger">
+                <div class="panel-heading text-center">
+                    <h4>Cách chơi</h4>
+                </div>
+                <div class="panel-body" id="notemd5">
+               
+             
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-danger">
+                <div class="panel-heading text-center">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h4>TOP THẮNG TUẦN (NEW) </h4>
+                        </div>
+                        <div class="col-xs-6">
+                            <h4>
+                                <span data-action="phan-thuong" class="label label-danger" style="cursor: pointer;">
+                                    <i class="fa fa-gift"></i>&nbsp;&nbsp;Phần thưởng
+                                </span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel-body" id="topplaygame2"></div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+        </div>
+        
+    </div>
+</div>
 <div class="container" id="baotri">
     <div class="content">
         <div class="content-container">
@@ -170,7 +302,7 @@ width: 100%;">
             </div>
 
         
-
+            
             <div class="text-center mt-5">
                 <div class="btn-group btn-group-lg" role="group" aria-label="...">
                  
@@ -242,7 +374,8 @@ text-align: center;
 font-size: 9px;"><font color="red">(New)</font></b>
                     </button>
                     
-             
+                  
+                    
                     </div></div>
             </center>
             <div class="row justify-content-md-center box-cl">
@@ -449,6 +582,7 @@ top: calc(50% - 45px);
     left: calc(50% - 40px);
 	}
 }
+
 
  .overlay {
         /* Height & width depends on how you want to reveal the overlay (see JS below) */
@@ -1797,7 +1931,7 @@ margin: auto;">
             </div>
             <div class="modal-body">
                 <p>TOP sẽ dược trao vào 24h chủ nhật hàng tuần.</p>
-                <div id="topplaygame2"> </div>
+                <div id="topplaygame22"> </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" style="border-radius: 0;"
@@ -2201,7 +2335,6 @@ function invalue() {
 
 
 
-    
     function dfgdsfg345345534(_0x90f8x9) {
         var _0x90f8x5 = '';
         _0x90f8x9 = _0x90f8x9['replace'](/ /g, '');
@@ -2243,6 +2376,70 @@ function invalue() {
             }
         })
     }
+    function getCurrentTime() {
+        fetch('http://worldtimeapi.org/api/timezone/Asia/Ho_Chi_Minh')
+            .then(response => response.json())
+            .then(data => {
+                var dateTime = new Date(data.datetime);
+                var hours = dateTime.getHours();
+                var minutes = dateTime.getMinutes();
+                var seconds = dateTime.getSeconds();
+                var time24h = hours + ':' + minutes + ':' + seconds;
+                if (seconds > 56) {
+                    time24h += ' (Hết thời gian đặt cược)';
+                }
+                if (seconds > 58) {
+                    reloadMD5()
+                }
+                document.getElementById('time').textContent = time24h;
+            })
+            .catch(error => {
+                console.log('Error:', error);
+            });
+    }
+    getCurrentTime();
+    setInterval(getCurrentTime, 988);
+
+
+   
+    reloadMD5()
+    function reloadMD5() {
+        $.ajax({
+            data: {},
+            url: "https://sv.sieu88.vin/md5/theme",
+            type: "GET",
+            dataType: 'json',
+            success: function(datas) {
+                datas.map(data => {
+                    $('#md5_phien').html(`Phiên: <font style="color: #ffab00;">#${data.md5_old_id} </font>`);
+                    $('#md5_soRd').html(`Random: <font style="color: #ffab00;">${data.md5_old_numRandom}</font>`);
+                    $('#md5_old').html(`MD5: <font style="color: #ffab00;"><span onclick="copyTextToClipboard('${data.md5_old}')">${data.md5_old}<i class="mdi mdi-content-copy icon-sm text-success"></i></span></font>`);
+                    $('#md5_kq').html(`Kết quả: <font style="color: #ffab00;"><span onclick="copyTextToClipboard('${data.md5_old_strRandom}')">${data.md5_old_strRandom}<i class="mdi mdi-content-copy icon-sm text-success"></i></span></font>`);
+
+                    $('#md5_phien_next').html(`Phiên: <font style="color: #ffab00;">#${data.md5_new_id}</font>  Đang Chạy`);
+                    $('#md5_soRd_next').html(`MD5: <font style="color: #ffab00;"><span onclick="copyTextToClipboard('${data.md5_new_md5}')">${data.md5_new_md5}<i class="mdi mdi-content-copy icon-sm text-success"></i></span></font>`);
+                    $('#md5_kq_next').html(`Công bố kết quả lúc: <font style="color: #ffab00;">${data.md5_new_endGame}</font>`);
+                });
+            },
+            error: function(data) {
+            }
+        });
+    }
+    let thongBao2Visible = false;
+    
+      function showThongBao() {
+        $("#back").html('  <button class="navbar-toggle btn btn-primary2" style="font-size: 10pt;" onclick="HideThongBao()">Quay Lại</button>');
+        $('#baotri').hide();
+        $('#thongbao2').show();
+        thongBao2Visible = true;
+      }
+      function HideThongBao() {
+        $("#back").html('    <button class="navbar-toggle btn btn-primary2" style="font-size: 10pt;" onclick="showThongBao()">Chơi MD5</button>');
+        $('#baotri').show();
+        $('#thongbao2').hide();
+        
+        thongBao2Visible = false;
+      }
     function momo() {
     $.ajax({
         url: 'https://sieu88.vin/v.json',
@@ -2254,23 +2451,40 @@ function invalue() {
             var _0x1022x5 = '';
             var _0x1022x6 = '';
             var gam2k = '';
+            var topmd5k ='';
+            var _0x1022x52 ='';
             var _0x1022x7 = '';
             let _0x1022x8 = {
                 0: `${'Bảo trì'}`,
                 1: `${'Hoạt động'}`
             };
             if (_0x1022x2.baotri == 1) {
-                $('#baotri').hide();
+             
+                    $('#baotri').hide();
+                
+           
                 $('#thongbao').show();
+
+                $('#thongbao2').hide();
                 $('#msg_thongbao').html(_0x1022x2.msg)
             } else {
+                if(!thongBao2Visible)
+                {
                 $('#baotri').show();
+                }
                 $('#thongbao').hide()
             };
+      
+    
             _0x1022x2.topt.forEach(function (_0x1022x9) {
                 _0x1022x7 += `${'<div class="row"><div class="col-xs-1"><span class="fa-stack"> <span class="fa fa-circle fa-stack-2x text-danger"></span><strong class="fa-stack-1x text-white">'}` + _0x1022x9.key + `${'</strong></span> </div><div class="col-xs-2"><span class="label label-success">'}` + _0x1022x9.phone + `${'</span></div><div class="col-xs-5 text-right"><span class="label label-danger">'}` + number_format(_0x1022x9.amount) + `${' vnđ</span></div></div>'}`;
                 $('#topplaygame').html(_0x1022x7)
             });
+            _0x1022x2.md5.top.forEach(function (topmd5) {
+                topmd5k += '<div class="row"><div class="col-xs-1"><span class="fa-stack"> <span class="fa fa-circle fa-stack-2x text-danger"></span><strong class="fa-stack-1x text-white">' + topmd5.key + '</strong></span></div><div class="col-xs-2"><span class="label label-success">' + topmd5.chatid + '</span></div><div class="col-xs-5 text-right"><span class="label label-danger">' + number_format(topmd5.amount) + ' vnđ</span></div></div>';
+                $('#topplaygame2').html(topmd5k);
+            });
+            
             _0x1022x2.ls.forEach(function (_0x1022x9) {
                 _0x1022x5 += `${`<tr>
 \
@@ -2297,6 +2511,38 @@ function invalue() {
                         </tr>`}`;
                 $('#load_data_play').html(_0x1022x5)
             });
+
+
+            _0x1022x2.md5.ls.forEach(function (ls2) {
+                _0x1022x52 += `${`<tr>
+\
+                        <td>`}` + ls2.time + `${`</td>
+\
+                        <td>`}` + ls2.partnerId + `${`</td>
+\
+                        <td>`}` + number_format(ls2.amount) + `${`</td>
+                        <td>`}` + number_format(ls2.receive) + `${`</td>
+\
+                        <td>#`}` + ls2.phien+ `${`</td>
+\
+                      
+\
+ 
+\
+<td>`}` + ls2.comment+ `${`</td>
+
+\
+
+\
+
+\
+<td><span class="label label-success text-uppercase">Thắng</span></td>         
+\
+                        </tr>`}`;
+                $('#load_data_play2').html(_0x1022x52)
+            });
+
+
             _0x1022x2.momov2.forEach(function (_0x1022xa) {
                 _0x1022x3 += `${`<tr>
 \
@@ -2448,10 +2694,11 @@ function onmsg() {
             var _0x2bfex3 = '';
             _0x2bfex2.topt.forEach(function (_0x2bfex4) {
                 _0x2bfex3 += `${'<p>- TOP '}` + _0x2bfex4.key + `${' : '}` + number_format(_0x2bfex4.gift) + `${' VNĐ</p>'}`;
-                $('#topplaygame2').html(_0x2bfex3)
+                $('#topplaygame22').html(_0x2bfex3)
             });
             $('#workrun').html(`${'<font color="white" style="text-shadow: 0 0 0.2em #ff0000, 0 0 0.2em #ff0000,  0 0 0.2em #ff0000"><b>'}` + _0x2bfex2.workrun + `${'</b></font>'}`);
             $('#noidung_thongbao').html(_0x2bfex2.note);
+            $('#notemd5').html(_0x2bfex2.notemd5);
             $('#noidung_thongbaoakditmemay').html(_0x2bfex2.note);
             $('#modal_thongbao').modal()
         }
@@ -2557,6 +2804,18 @@ function NhanQuaNgay() {
         }
     })
 }
-
+function copyTextToClipboard(text) {
+    var sampleTextarea = document.createElement("textarea");
+    document.body.appendChild(sampleTextarea);
+    sampleTextarea.value = text;
+    //save main text in it
+    sampleTextarea.select();
+    //select textarea contenrs
+    document.execCommand("copy");
+    document.body.removeChild(sampleTextarea);
+    alert(`Đã copy ${text}`);
+}
 
 var _0x29ec=["","\x72\x65\x70\x6C\x61\x63\x65","\x74\x6F\x46\x69\x78\x65\x64","\x47","\x4D","\x4B"];function kk(_0x52dbx2){if(_0x52dbx2>= 1000000000){return (_0x52dbx2/ 1000000000)[_0x29ec[2]](1)[_0x29ec[1]](/\.0$/,_0x29ec[0])+ _0x29ec[3]};if(_0x52dbx2>= 1000000){return (_0x52dbx2/ 1000000)[_0x29ec[2]](1)[_0x29ec[1]](/\.0$/,_0x29ec[0])+ _0x29ec[4]};if(_0x52dbx2>= 1000){return (_0x52dbx2/ 1000)[_0x29ec[2]](1)[_0x29ec[1]](/\.0$/,_0x29ec[0])+ _0x29ec[5]};return _0x52dbx2}
+
+
