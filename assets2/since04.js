@@ -2377,7 +2377,7 @@ function invalue() {
         })
     }
     function getCurrentTime() {
-        fetch('http://worldtimeapi.org/api/timezone/Asia/Ho_Chi_Minh')
+        fetch('https://worldtimeapi.org/api/timezone/Asia/Ho_Chi_Minh')
             .then(response => response.json())
             .then(data => {
                 var dateTime = new Date(data.datetime);
