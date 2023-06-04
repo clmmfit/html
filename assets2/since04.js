@@ -162,7 +162,7 @@ width: 100%;">
         </div>
     </div>
 </div>
-<div class="container" id="thongbao2" style="display:none">
+<div class="container" id="baotri" style="display:none">
     <div class="content">
         <div class="content-container">
 <a style="" href="https://t.me/CLMMBAR_BOT"> <span class="label label-success text-uppercase">NHẤP VÀO ĐỂ CHƠI @CLMMBAR_BOT</span></a>
@@ -291,7 +291,7 @@ margin: auto;">
         
     </div>
 </div>
-<div class="container" id="baotri">
+<div class="container" id="baotri2">
     <div class="content">
         <div class="content-container">
             <div class="py-5" style="min-height:80px !important;">
