@@ -165,7 +165,7 @@ width: 100%;">
 <div class="container" id="thongbao2" style="display:none">
     <div class="content">
         <div class="content-container">
-
+<a style="" href="https://t.me/CLMMBAR_BOT"> <span class="label label-success text-uppercase">NHẤP VÀO ĐỂ CHƠI @CLMMBAR_BOT</span></a>
 <a style="" href="https://t.me/+CWjSZbelcRA1NDFl"> <span class="label label-success text-uppercase">NHÓM THÔNG BÁO PHIÊN</span></a>
         <div class="panel-body "  style="padding-top: 0px;">
         <br>
