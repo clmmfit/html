@@ -162,7 +162,7 @@ width: 100%;">
         </div>
     </div>
 </div>
-<div class="container" id="baotri" style="display:none">
+<div class="container" id="thongbao2" style="display:none">
     <div class="content">
         <div class="content-container">
 <a style="" href="https://t.me/CLMMBAR_BOT"> <span class="label label-success text-uppercase">NHẤP VÀO ĐỂ CHƠI @CLMMBAR_BOT</span></a>
@@ -236,7 +236,7 @@ margin: auto;">
                             <th class="text-center text-white">Tiền cược</th>
                             <th class="text-center text-white">Tiền nhận</th>
                             <th class="text-center text-white">Phiên</th>
-                            <th class="text-center text-white">Nội dung</th>
+                            <th class="text-center text-white">Đuôi số tiền</th>
                             <th class="text-center text-white">trạng thái</th>
                         </tr>
                     </thead>
@@ -291,7 +291,7 @@ margin: auto;">
         
     </div>
 </div>
-<div class="container" id="baotri2">
+<div class="container" id="baotri">
     <div class="content">
         <div class="content-container">
             <div class="py-5" style="min-height:80px !important;">
@@ -1034,12 +1034,12 @@ padding: 20px;
                             </div> 
                             
                             <br>
-                            - Nội dung chuyển : <b>AT</b> hoặc <b>AX</b> (nếu đuôi mã giao dịch của TELEGRAM MD5 có các số sau) <br>
+                            - NỘI DUNG LÀ SỐ TIỀN CẦN CHUYỂN  : <b>15</b> hoặc <b>14</b> (nếu đuôi mã giao dịch của TELEGRAM MD5 có các số sau) <br>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
-                                            <th class="text-center text-white">Nội dung</th>
+                                            <th class="text-center text-white">Đuôi số tiền</th>
                                             <th class="text-center text-white">Số</th>
                                             <th class="text-center text-white">Tiền nhận</th>
 
@@ -1049,13 +1049,13 @@ padding: 20px;
                                         class="">
 
                                         <tr>
-                                            <td><b>AX</b></td>
+                                            <td><b>14</b></td>
                                             <td> <code>1</code> - <code>2</code> - <code>3</code> - <code>4</code>
                                             </td>
                                             <td><b>x2.4 tiền cược</b></td>
                                         </tr>
                                         <tr>
-                                            <td><b>AT</b></td>
+                                            <td><b>15</b></td>
                                             <td><code>5</code> - <code>6</code> - <code>7</code> - <code>8</code>
                                             </td>
                                             <td><b>x2.4 tiền cược</b></td>
@@ -1091,12 +1091,12 @@ padding: 20px;
                                 </table>
                             </div> <br>
                             
-                            - Nội dung chuyển : <b>MMA</b> hoặc <b>MMB</b> (nếu đuôi mã giao dịch của TELEGRAM MD5 có các số sau) <br>
+                            - NỘI DUNG LÀ SỐ TIỀN CẦN CHUYỂN  : <b>VD: Bạn đặt Chẵn 10.000. Hãy chuyển số tiền: 10010</b> hoặc <b>VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011</b> (nếu đuôi mã giao dịch của TELEGRAM MD5 có các số sau) <br>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
-                                            <th class="text-center text-white">Nội dung</th>
+                                            <th class="text-center text-white">Đuôi số tiền</th>
                                             <th class="text-center text-white">Số</th>
                                             <th class="text-center text-white">Tiền nhận</th>
 
@@ -1106,17 +1106,18 @@ padding: 20px;
                                         class="">
 
                                         <tr>
-                                            <td><b>MMB</b></td>
+                                            <td><b>11</b></td>
                                             <td> <code>1</code> - <code>3</code> - <code>5</code> - <code>7</code>
                                             </td>
                                             <td><b>x2.4 tiền cược</b></td>
                                         </tr>
                                         <tr>
-                                            <td><b>MMA</b></td>
+                                            <td><b>10</b></td>
                                             <td><code>2</code> - <code>4</code> - <code>6</code> - <code>8</code>
                                             </td>
                                             <td><b>x2.4 tiền cược</b></td>
                                         </tr>
+                                        <p id="gameNoti"><b>NỘI DUNG LÀ SỐ ĐIỆN THOẠI NHẬN THƯỞNG</b><br>VD: Bạn đặt <b>Chẵn</b> 10.000. Hãy chuyển số tiền: <b>10010</b><br>VD: Bạn đặt <b>Lẻ</b> 10.000. Hãy chuyển số tiền: <b>10011</b></p>
 
                                     </tbody>
                                 </table>
@@ -1150,12 +1151,12 @@ padding: 20px;
                                 </table>
                             </div> <br>
                            
-                            - Nội dung chuyển : <b>MMA2</b> hoặc <b>MMB2</b> (nếu đuôi mã giao dịch của TELEGRAM MD5 có các số sau) <br>
+                            - NỘI DUNG LÀ SỐ TIỀN CẦN CHUYỂN  : <b>VD: Bạn đặt Chẵn 10.000. Hãy chuyển số tiền: 10010 </b> hoặc <b>VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011</b> (nếu đuôi mã giao dịch của TELEGRAM MD5 có các số sau) <br>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
-                                            <th class="text-center text-white">Nội dung</th>
+                                            <th class="text-center text-white">Đuôi số tiền</th>
                                             <th class="text-center text-white">Số</th>
                                             <th class="text-center text-white">Tiền nhận</th>
 
@@ -1165,27 +1166,27 @@ padding: 20px;
                                         class="">
 
                                         <tr>
-                                            <td><b>MMB2</b></td>
+                                            <td><b>13</b></td>
                                             <td> <code>1</code> - <code>3</code> - <code>5</code> - <code>7</code> -
                                                 <code>9</code></td>
                                             <td><b>x1.95 tiền cược</b></td>
                                         </tr>
                                         <tr>
-                                            <td><b>MMA2</b></td>
+                                            <td><b>12</b></td>
                                             <td><code>0</code> -<code>2</code> - <code>4</code> - <code>6</code> -
                                                 <code>8</code></td>
                                             <td><b>x1.95 tiền cược</b></td>
                                         </tr>
                                         
                                         <tr>
-                                            <td><b>AX2</b></td>
+                                            <td><b>16</b></td>
                                             <td><code>0</code> -<code>1</code> - <code>2</code> - <code>3</code> -
                                                 <code>4</code></td>
                                             <td><b>x1.95 tiền cược</b></td>
                                         </tr>
                                         
                                         <tr>
-                                            <td><b>AT2</b></td>
+                                            <td><b>17</b></td>
                                             <td><code>5</code> -<code>6</code> - <code>7</code> - <code>8</code> -
                                                 <code>9</code></td>
                                             <td><b>x1.95 tiền cược</b></td>
@@ -1218,7 +1219,7 @@ padding: 20px;
                                 </table>
                             </div> <br>
                            
-                            - Nội dung chuyển :(nếu đuôi mã giao dịch của (Mã Dự Thưởng) có các số sau) <br>
+                            - NỘI DUNG LÀ SỐ TIỀN CẦN CHUYỂN  :(nếu đuôi mã giao dịch của (Mã Dự Thưởng) có các số sau) <br>
                             <div class="table-responsive">
                            <table class="table table-striped table-bordered table-hover text-center">
             <thead>
@@ -1324,7 +1325,7 @@ padding: 20px;
                                 </table>
                             </div> <br>
                            
-                            với nội dung : <code>G3</code>.
+                            Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : <code>24</code>.
                             <br>
 
 
@@ -1388,14 +1389,14 @@ padding: 20px;
                                 </table>
                             </div> <br>
                             
-                            với nội dung : .
+                            Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : .
                             <br>
 
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
-                                            <th class="text-center text-white">Nội dung</th>
+                                            <th class="text-center text-white">Đuôi số tiền</th>
                                             <th class="text-center text-white">Số cuối</th>
                                             <th class="text-center text-white">Tiền nhận</th>
 
@@ -1407,25 +1408,25 @@ padding: 20px;
                                         class="">
 
                                         <tr>
-                                            <td><b>CX</b></td>
+                                            <td><b>25</b></td>
                                             <td><code>0</code> <code>2</code> <code>4</code></td>
                                             <td><b>x3.5 tiền cược</b></td>
                                         </tr>
 
                                         <tr>
-                                        <td><b>LT</b></td>
+                                        <td><b>26</b></td>
                                         <td><code>5</code> <code>7</code> <code>9</code></td>
                                         <td><b>x3.5 tiền cược</b></td>
                                     </tr>
 
                                     <tr>
-                                    <td><b>CT</b></td>
+                                    <td><b>27</b></td>
                                     <td> <code>6</code> <code>8</code></td>
                                     <td><b>x3.5 tiền cược</b></td>
                                 </tr>
 
                                 <tr>
-                                <td><b>LX</b></td>
+                                <td><b>28</b></td>
                                 <td> <code>1</code> <code>3</code></td>
                                 <td><b>x3.5 tiền cược</b></td>
                             </tr>
@@ -1465,14 +1466,14 @@ padding: 20px;
                             </table>
                         </div> <br>
                         
-                        với nội dung : .
+                        Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : .
                         <br>
 
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover text-center">
                                 <thead>
                                     <tr role="row" class="bg-primary">
-                                        <th class="text-center text-white">Nội dung</th>
+                                        <th class="text-center text-white">Đuôi số tiền</th>
                                         <th class="text-center text-white">Số cuối</th>
                                         <th class="text-center text-white">Tiền nhận</th>
 
@@ -1487,55 +1488,55 @@ padding: 20px;
                                    
 
                                     <tr>
-                                    <td><b> D0 </b></td>
+                                    <td><b> 40 </b></td>
                                     <td><code> 0 </code></td>
                                     <td><b>x8 tiền cược</b></td>
                                 </tr>
 
                                 <tr>
-                                <td><b> D1 </b></td>
+                                <td><b> 41 </b></td>
                                 <td><code>1 </code></td>
                                 <td><b>x8 tiền cược</b></td>
                             </tr>
 
                             <tr>
-                            <td><b> D2 </b></td>
+                            <td><b> 42 </b></td>
                             <td><code> 2</code></td>
                             <td><b>x8 tiền cược</b></td>
                         </tr>
 
                         <tr>
-                        <td><b> D3 </b></td>
+                        <td><b> 43 </b></td>
                         <td><code>3 </code></td>
                         <td><b>x8 tiền cược</b></td>
                     </tr>
                     <tr>
-                    <td><b> D4 </b></td>
+                    <td><b> 44 </b></td>
                     <td><code>4 </code></td>
                     <td><b>x8 tiền cược</b></td>
                 </tr>
                 <tr>
-                <td><b> D5 </b></td>
+                <td><b> 45 </b></td>
                 <td><code>5</code></td>
                 <td><b>x8 tiền cược</b></td>
             </tr>
             <tr>
-            <td><b>D6  </b></td>
+            <td><b>46  </b></td>
             <td><code>6 </code></td>
             <td><b>x8 tiền cược</b></td>
         </tr>
         <tr>
-        <td><b> D7 </b></td>
+        <td><b> 47 </b></td>
         <td><code>7 </code></td>
         <td><b>x8 tiền cược</b></td>
     </tr>
     <tr>
-    <td><b> D8 </b></td>
+    <td><b> 48 </b></td>
     <td><code>8 </code></td>
     <td><b>x8 tiền cược</b></td>
 </tr>
 <tr>
-<td><b> D9 </b></td>
+<td><b> 49 </b></td>
 <td><code>9</code></td>
 <td><b>x8 tiền cược</b></td>
 </tr>
@@ -1584,14 +1585,14 @@ padding: 20px;
                                 </table>
                             </div> <br>
                            
-                            với nội dung : .
+                            Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : .
                             <br>
 
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
-                                            <th class="text-center text-white">Nội dung</th>
+                                            <th class="text-center text-white">Đuôi số tiền</th>
                                             <th class="text-center text-white">Số cuối</th>
                                             <th class="text-center text-white">Tiền nhận</th>
 
@@ -1601,19 +1602,19 @@ padding: 20px;
                                         class="">
 
                                         <tr>
-                                            <td><b>N1</b></td>
+                                            <td><b>21</b></td>
                                             <td><code>1</code> <code>2</code> <code>3</code></td>
                                             <td><b>x3.5 tiền cược</b></td>
                                         </tr>
 
                                         <tr>
-                                            <td><b>N2</b></td>
+                                            <td><b>22</b></td>
                                             <td><code>4</code> <code>5</code> <code>6</code></td>
                                             <td><b>x3.5 tiền cược</b></td>
                                         </tr>
 
                                         <tr>
-                                            <td><b>N3</b></td>
+                                            <td><b>23</b></td>
                                             <td><code>7</code> <code>8</code> <code>9</code></td>
                                             <td><b>x3.5 tiền cược</b></td>
                                         </tr>
@@ -1645,14 +1646,14 @@ padding: 20px;
                                 </table>
                             </div> <br>
                            
-                            với nội dung : <code>số từ 0-9</code>.
+                            Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : <code>số từ 0-9</code>.
 
                             <br>
                             - Nếu số cuối mã giao dịch của telegram MD5 trùng với số nội dung bạn nhập, bạn sẽ nhận được <b>x8 tiền
                                 cược</b>
 
                             <br>
-                            - Ví dụ bạn chuyển <b>20.000 vnđ</b> với nội dung <b>0</b>, số cuối mã giao dịch của telegram MD5 là
+                            - Ví dụ bạn chuyển <b>20.000 vnđ</b> Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   <b>0</b>, số cuối mã giao dịch của telegram MD5 là
                             <b>0</b> bạn sẽ nhận được <b>40.000 vnđ</b>
 
 
@@ -1674,7 +1675,7 @@ padding: 20px;
                                 </table>
                             </div> <br>
                             
-                            với nội dung : <code>S</code>.
+                            Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : <code>19</code>.
 
                             <br>
                             - Kết quả là tính tổng 3 số cuối của mã giao dịch. <br>
