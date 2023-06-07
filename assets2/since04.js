@@ -1117,8 +1117,7 @@ padding: 20px;
                                             </td>
                                             <td><b>x2.4 tiền cược</b></td>
                                         </tr>
-                                        <p id="gameNoti"><b>NỘI DUNG LÀ SỐ ĐIỆN THOẠI NHẬN THƯỞNG</b><br>VD: Bạn đặt <b>Chẵn</b> 10.000. Hãy chuyển số tiền: <b>10010</b><br>VD: Bạn đặt <b>Lẻ</b> 10.000. Hãy chuyển số tiền: <b>10011</b></p>
-
+                                  
                                     </tbody>
                                 </table>
                             </div>
