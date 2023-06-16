@@ -7,6 +7,9 @@ function Since04_body()
 $("body").html(`
 
 <style>
+.left-align {
+  text-align: left;
+}
 .btn-primary2 {
     color: #fff;
     background-color: #78461a;
@@ -236,7 +239,7 @@ margin: auto;">
                             <th class="text-center text-white">Tiền cược</th>
                             <th class="text-center text-white">Tiền nhận</th>
                             <th class="text-center text-white">Phiên</th>
-                            <th class="text-center text-white">Đuôi số tiền</th>
+                            <th class="text-center text-white">Nội dung</th>
                             <th class="text-center text-white">trạng thái</th>
                         </tr>
                     </thead>
@@ -312,9 +315,7 @@ margin: auto;">
                     <button class="btn btn-default" server-action="change" server-id="10000" server-rate="10000">
                         Tài xỉu
                     </button>
-                    <button class="btn btn-default" server-action="change" server-id="1" server-rate="1">
-                        Chẵn Lẻ 2
-                    </button>
+
                     <button class="btn btn-default" server-action="change" server-id="2" server-rate="1">
                         Gấp 3
                     </button>
@@ -481,7 +482,13 @@ padding: 20px;
                          
                          
                          
-                         
+                         <script>
+  var currentTime = new Date().getHours();
+  if (currentTime < 7) {
+    document.getElementById('diemDanhCard').style.display = 'none';
+    document.getElementById('occard').innerHTML = '<div class="alert alert-info">Điểm danh chỉ hoạt động từ 00h - 7h</div>';
+  }
+</script>
                          
                          
                          
@@ -953,14 +960,15 @@ padding: 20px;
                          <div class="row collapse show" id="QuaTang" style="">
 <div class="col-lg-12">
   <div class="body">
-    <div class="text-center">
+  <div class="text-center">
    
-   <font color="blue"><big><b>Nhiệm Vụ Ngày</b></big></font>
-   <br>
-               
    
-    
-    <div class="form-group occard" id="osdt">
+  <br>
+<h4 style="font-weight: bold">Tổng Tiền Đã Trao: <span style="color: red" id="nvnmoney">0</span></h4>
+              
+  
+   
+   <div class="form-group occard" id="osdt">
                                     <label for="exampleInputEmail1">Số điện thoại:</label>
                                     <input type="text" class="form-control" id="partnerId" aria-describedby="emailHelp" placeholder="03837755">
                                     <small id="emailHelp" class="form-text text-muted">Nhập số điện thoại của bạn để điểm danh.</small>
@@ -974,10 +982,9 @@ padding: 20px;
     
    
     </div>
-    <div class="occho" id="fghdh"> 
+    <div  class="occho left-align" id="fghdh"> 
     - Thật tuyệt vời ! Mỗi ngày chỉ cần chơi trên Clmm.Me chắc chắn bạn sẽ nhận được tiền. <br>
 - Khi chơi đủ số tiền (ko cần biết thắng thua) chắc chắn sẽ nhận được tiền.  <br>
-- Hãy nhập số điện thoại của bạn vào mục bên trên để kiểm tra đã chơi bao nhiêu nhé. Chú ý : Phải nhập sdt là số cũ vd: 082xxx -> 0129xxx , 03xxx -> 016... <br>
 - Khi chơi đủ mốc tiền, các bạn ấn vào nhận thưởng để nhận được các mốc như sau:
     
      <div class="table-responsive">
@@ -1018,8 +1025,8 @@ padding: 20px;
                         
                         
                         <div class="panel-body turn" turn-tab="10000" style="padding-top: 0px;">
-                            Cách chơi vô cùng đơn giản : <br>
-                            - Chuyển tiền vào một trong các tài khoản : <div class="table-responsive">
+                        <p class="left-align">- Cách chơi vô cùng đơn giản</p>
+                        <p class="left-align">- Dùng ví MOMO chuyển tiền vào một trong các tài khoản:</p><div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
@@ -1034,14 +1041,14 @@ padding: 20px;
                             </div> 
                             
                             <br>
-                            - NỘI DUNG LÀ SỐ TIỀN CẦN CHUYỂN  : <b>15</b> hoặc <b>14</b> (nếu đuôi mã giao dịch của TELEGRAM MD5 có các số sau) <br>
+                            - Nội dung chuyển : <b>AT</b> hoặc <b>AX</b> hoặc <b>AT2</b> hoặc <b>AX2</b>  <br>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
-                                            <th class="text-center text-white">Đuôi số tiền</th>
+                                            <th class="text-center text-white">Nội dung</th>
                                             <th class="text-center text-white">Số</th>
-                                            <th class="text-center text-white">Tiền nhận</th>
+                                            <th class="text-center text-white">Tỉ lệ</th>
 
                                         </tr>
                                     </thead>
@@ -1049,26 +1056,36 @@ padding: 20px;
                                         class="">
 
                                         <tr>
-                                            <td><b>14</b></td>
+                                            <td><b>AX</b></td>
                                             <td> <code>1</code> - <code>2</code> - <code>3</code> - <code>4</code>
                                             </td>
-                                            <td><b>x2.4 tiền cược</b></td>
+                                            <td><b>x2.4 </b></td>
                                         </tr>
                                         <tr>
-                                            <td><b>15</b></td>
+                                            <td><b>AT</b></td>
                                             <td><code>5</code> - <code>6</code> - <code>7</code> - <code>8</code>
                                             </td>
-                                            <td><b>x2.4 tiền cược</b></td>
+                                            <td><b>x2.4 </b></td>
                                         </tr>
-
+                                        <tr>
+                                        <td><b>AX2</b></td>
+                                        <td><code>0</code> -<code>1</code> - <code>2</code> - <code>3</code> -
+                                            <code>4</code></td>
+                                        <td><b>x1.95 </b></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><b>AT2</b></td>
+                                        <td><code>5</code> -<code>6</code> - <code>7</code> - <code>8</code> -
+                                            <code>9</code></td>
+                                        <td><b>x1.95 </b></td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
-                             - Tiền thắng sẽ = <b>Tiền cược*2.4</b> <br>
-                             <b> - Nếu 2 số cuối mã giao dịch của telegram MD5 là 0,9 sẽ thua </b> <br>
-
-                           <b> Đặc biệt</b>: bạn có 10% cơ hội được trả thưởng 2 lần. <Br>
-                            - Mức cược mỗi số khác nhau, nếu chuyển sai hạn mức hoặc sai nội dung vui lòng vào phần "kiểm tra mã giao dịch" để hoàn tiền.</b>
+                           
+                            <p class="left-align"> - Tài Xỉu Tiền thắng sẽ = <b>Tiền cược * 2.4</b></p>
+                            <p class="left-align"> - Tài Xỉu 2 Tiền thắng sẽ = <b>Tiền cược * 1.95</b></p>
 
 
 
@@ -1076,7 +1093,8 @@ padding: 20px;
                         </div>
 
                         <div class="panel-body turn" turn-tab="1000" style="padding-top: 0px;">
-                        <br>
+                        <p class="left-align">- Cách chơi vô cùng đơn giản</p>
+                        <p class="left-align">- Dùng ví MOMO chuyển tiền vào một trong các tài khoản:</p>
                            <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
@@ -1091,14 +1109,14 @@ padding: 20px;
                                 </table>
                             </div> <br>
                             
-                            - NỘI DUNG LÀ SỐ TIỀN CẦN CHUYỂN  : <b>VD: Bạn đặt Chẵn 10.000. Hãy chuyển số tiền: 10010</b> hoặc <b>VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011</b> (nếu đuôi mã giao dịch của TELEGRAM MD5 có các số sau) <br>
+                            - Nội dung chuyển : <b>CC</b> hoặc <b>LL</b>hoặc <b>CC2</b> hoặc <b>LL2</b> <br>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
-                                            <th class="text-center text-white">Đuôi số tiền</th>
+                                            <th class="text-center text-white">Nội dung</th>
                                             <th class="text-center text-white">Số</th>
-                                            <th class="text-center text-white">Tiền nhận</th>
+                                            <th class="text-center text-white">Tỉ lệ</th>
 
                                         </tr>
                                     </thead>
@@ -1106,37 +1124,46 @@ padding: 20px;
                                         class="">
 
                                         <tr>
-                                            <td><b>11</b></td>
+                                            <td><b>LL</b></td>
                                             <td> <code>1</code> - <code>3</code> - <code>5</code> - <code>7</code>
                                             </td>
-                                            <td><b>x2.4 tiền cược</b></td>
+                                            <td><b>x2.4</b></td>
                                         </tr>
                                         <tr>
-                                            <td><b>10</b></td>
+                                            <td><b>CC</b></td>
                                             <td><code>2</code> - <code>4</code> - <code>6</code> - <code>8</code>
                                             </td>
-                                            <td><b>x2.4 tiền cược</b></td>
+                                            <td><b>x2.4</b></td>
                                         </tr>
-                                  
+                                        <tr>
+                                        <td><b>LL2</b></td>
+                                        <td> <code>1</code> - <code>3</code> - <code>5</code> - <code>7</code> -
+                                            <code>9</code></td>
+                                        <td><b>x1.95</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>CC2</b></td>
+                                        <td><code>0</code> -<code>2</code> - <code>4</code> - <code>6</code> -
+                                            <code>8</code></td>
+                                        <td><b>x1.95</b></td>
+                                    </tr>
+
                                     </tbody>
                                 </table>
                             </div>
+                            <p class="left-align">- Chẵn Lẻ Tiền thắng sẽ = <b>Tiền cược * 2.4</b> (100.000đ được 240.000đ)</p>
+                            <p class="left-align">- Chẵn Lẻ 2 Tiền thắng sẽ = <b>Tiền cược * 1.95</b> (100.000đ được 195.000đ)</p>
                             
-                            <b> - Nếu 2 số cuối mã giao dịch của telegram MD5 là 0,9 sẽ thua </b> <br>
-
-                            - Tiền thắng sẽ = <b>Tiền cược*2.4</b> <br>
-                             -<b> Đặc biệt</b>: bạn có 10% cơ hội được trả thưởng 2 lần. <Br>
-
-                            <b>Lưu ý :
-                            -Mức cược mỗi số khác nhau, nếu chuyển sai hạn mức hoặc sai nội dung vui lòng vào phần "kiểm tra mã giao dịch" để hoàn tiền..</b>
-
+                            
+                           
+                            
 
 
                         </div>
 
                         <div class="panel-body turn" turn-tab="1" style="padding-top: 0px;">
-                            Cách chơi vô cùng đơn giản : <br>
-                            - Chuyển tiền vào một trong các tài khoản : <div class="table-responsive">
+                        <p class="left-align">- Cách chơi vô cùng đơn giản</p>
+                        <p class="left-align">- Dùng ví MOMO chuyển tiền vào một trong các tài khoản:</p> <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
@@ -1150,12 +1177,12 @@ padding: 20px;
                                 </table>
                             </div> <br>
                            
-                            - NỘI DUNG LÀ SỐ TIỀN CẦN CHUYỂN  : <b>VD: Bạn đặt Chẵn 10.000. Hãy chuyển số tiền: 10010 </b> hoặc <b>VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011</b> (nếu đuôi mã giao dịch của TELEGRAM MD5 có các số sau) <br>
+                            - Nội dung chuyển : <b>MMA2</b> hoặc <b>MMB2</b> (nếu đuôi mã giao dịch của TELEGRAM MD5 có các số sau) <br>
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
-                                            <th class="text-center text-white">Đuôi số tiền</th>
+                                            <th class="text-center text-white">Nội dung</th>
                                             <th class="text-center text-white">Số</th>
                                             <th class="text-center text-white">Tiền nhận</th>
 
@@ -1165,27 +1192,27 @@ padding: 20px;
                                         class="">
 
                                         <tr>
-                                            <td><b>13</b></td>
+                                            <td><b>MMB2</b></td>
                                             <td> <code>1</code> - <code>3</code> - <code>5</code> - <code>7</code> -
                                                 <code>9</code></td>
                                             <td><b>x1.95 tiền cược</b></td>
                                         </tr>
                                         <tr>
-                                            <td><b>12</b></td>
+                                            <td><b>MMA2</b></td>
                                             <td><code>0</code> -<code>2</code> - <code>4</code> - <code>6</code> -
                                                 <code>8</code></td>
                                             <td><b>x1.95 tiền cược</b></td>
                                         </tr>
                                         
                                         <tr>
-                                            <td><b>16</b></td>
+                                            <td><b>AX2</b></td>
                                             <td><code>0</code> -<code>1</code> - <code>2</code> - <code>3</code> -
                                                 <code>4</code></td>
                                             <td><b>x1.95 tiền cược</b></td>
                                         </tr>
                                         
                                         <tr>
-                                            <td><b>17</b></td>
+                                            <td><b>AT2</b></td>
                                             <td><code>5</code> -<code>6</code> - <code>7</code> - <code>8</code> -
                                                 <code>9</code></td>
                                             <td><b>x1.95 tiền cược</b></td>
@@ -1203,8 +1230,8 @@ padding: 20px;
 
                         </div>
   <div class="panel-body turn" turn-tab="3443" style="padding-top: 0px;">
-                            Cách chơi vô cùng đơn giản : <br>
-                            - Chuyển tiền vào một trong các tài khoản : <div class="table-responsive">
+  <p class="left-align">- Cách chơi vô cùng đơn giản</p>
+  <p class="left-align">- Dùng ví MOMO chuyển tiền vào một trong các tài khoản:</p><div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
@@ -1218,7 +1245,7 @@ padding: 20px;
                                 </table>
                             </div> <br>
                            
-                            - NỘI DUNG LÀ SỐ TIỀN CẦN CHUYỂN  :(nếu đuôi mã giao dịch của (Mã Dự Thưởng) có các số sau) <br>
+                            - Nội dung chuyển :(nếu đuôi mã giao dịch của (Mã Dự Thưởng) có các số sau) <br>
                             <div class="table-responsive">
                            <table class="table table-striped table-bordered table-hover text-center">
             <thead>
@@ -1308,9 +1335,8 @@ padding: 20px;
 
                         </div>
                         <div class="panel-body turn" turn-tab="2" style="padding-top: 0px;">
-                            - <b>Gấp 3</b> là một game vô cùng dễ, tính kết quả bằng <b>2 số cuối mã giao dịch của telegram MD5</b>.
-                            <br>
-                            - Chuyển tiền vào một trong các tài khoản : <div class="table-responsive">
+                        <p class="left-align">- Cách chơi vô cùng đơn giản</p>
+                        <p class="left-align">- Dùng ví MOMO chuyển tiền vào một trong các tài khoản:</p> <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
@@ -1324,7 +1350,7 @@ padding: 20px;
                                 </table>
                             </div> <br>
                            
-                            Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : <code>24</code>.
+                            với nội dung : <b>G3</b>.
                             <br>
 
 
@@ -1335,7 +1361,7 @@ padding: 20px;
                                         <tr role="row" class="bg-primary">
                                             <th class="text-center text-white">Cách tính</th>
                                             <th class="text-center text-white">Số</th>
-                                            <th class="text-center text-white">Tiền nhận</th>
+                                            <th class="text-center text-white">Tỉ Lệ</th>
 
                                         </tr>
                                     </thead>
@@ -1344,25 +1370,25 @@ padding: 20px;
 <td>2 số cuối mã GD</td>
 <td>
 <code>02</code> <code>13</code> <code>17</code> <code>19</code> <code>21</code> <code>29</code> <code>35</code> <code>37</code> <code>47</code> <code>49</code> <code>51</code> <code>54</code> <code>57</code> <code>63</code> <code>64</code> <code>74</code> <code>83</code> <code>91</code> <code>95</code> <code>96</code> </td>
-<td><b>x3 tiền cược</b></td>
+<td><b>x3 </b></td>
 </tr>
 <tr>
 <td>2 số cuối mã GD</td>
 <td>
 <code>66</code> <code>99</code> </td>
-<td><b>x4 tiền cược</b></td>
+<td><b>x4 </b></td>
 </tr>
 <tr>
 <td>3 số cuối mã GD</td>
 <td>
 <code>123</code> <code>234</code> <code>456</code> <code>678</code> <code>789</code> </td>
-<td><b>x5 tiền cược</b></td>
+<td><b>x5 </b></td>
 </tr>
 </tbody>
                                 </table>
                             </div>
 
-
+                            <p class="left-align"> - Gấp 3 Tiền thắng sẽ = <b>Tiền cược * Tỉ Lệ.</b></p>
                         </div>
 
 
@@ -1371,9 +1397,8 @@ padding: 20px;
 
 
                         <div class="panel-body turn" turn-tab="2706" style="padding-top: 0px;">
-                            - <b>Xiên</b> là một game vô cùng dễ, tính kết quả bằng <b>1 số cuối mã giao
-                                dịch</b>. <br>
-                            - Cách chơi rất đơn giản, - Chuyển tiền vào một trong các tài khoản : <div
+                            <p class="left-align">- Cách chơi vô cùng đơn giản</p>
+                            <p class="left-align">- Dùng ví MOMO chuyển tiền vào một trong các tài khoản:</p> <div
                                 class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
@@ -1388,14 +1413,14 @@ padding: 20px;
                                 </table>
                             </div> <br>
                             
-                            Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : .
+                            với nội dung : .
                             <br>
 
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
-                                            <th class="text-center text-white">Đuôi số tiền</th>
+                                            <th class="text-center text-white">Nội dung</th>
                                             <th class="text-center text-white">Số cuối</th>
                                             <th class="text-center text-white">Tiền nhận</th>
 
@@ -1407,25 +1432,25 @@ padding: 20px;
                                         class="">
 
                                         <tr>
-                                            <td><b>25</b></td>
+                                            <td><b>CX</b></td>
                                             <td><code>0</code> <code>2</code> <code>4</code></td>
                                             <td><b>x3.5 tiền cược</b></td>
                                         </tr>
 
                                         <tr>
-                                        <td><b>26</b></td>
+                                        <td><b>LT</b></td>
                                         <td><code>5</code> <code>7</code> <code>9</code></td>
                                         <td><b>x3.5 tiền cược</b></td>
                                     </tr>
 
                                     <tr>
-                                    <td><b>27</b></td>
+                                    <td><b>CT</b></td>
                                     <td> <code>6</code> <code>8</code></td>
                                     <td><b>x3.5 tiền cược</b></td>
                                 </tr>
 
                                 <tr>
-                                <td><b>28</b></td>
+                                <td><b>LX</b></td>
                                 <td> <code>1</code> <code>3</code></td>
                                 <td><b>x3.5 tiền cược</b></td>
                             </tr>
@@ -1436,7 +1461,7 @@ padding: 20px;
                                     </tbody>
                                 </table>
                             </div>
-                            <br> - Nếu mã giao dịch có số cuối trùng với 1 trong 3 số trên của kết quả trong telegram, bạn sẽ chiến thắng.
+                            <p class="left-align"> - Xiên Tiền thắng sẽ = <b>Tiền cược * Tỉ lệ</b></p>
 
 
                         </div>
@@ -1448,9 +1473,9 @@ padding: 20px;
 
 
                         <div class="panel-body turn" turn-tab="270604" style="padding-top: 0px;">
-                        - <b>Đoán số</b> là một game vô cùng dễ, tính kết quả bằng <b>1 số cuối mã giao
-                            dịch Telegram md5</b>. <br>
-                        - Cách chơi rất đơn giản, - Chuyển tiền vào một trong các tài khoản : <div
+                        <p class="left-align">- Cách chơi vô cùng đơn giản</p>
+                        <p class="left-align">- Dùng ví MOMO chuyển tiền vào một trong các tài khoản:</p>
+                        <div
                             class="table-responsive">
                             <table class="table table-striped table-bordered table-hover text-center">
                                 <thead>
@@ -1465,14 +1490,14 @@ padding: 20px;
                             </table>
                         </div> <br>
                         
-                        Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : .
+                        với nội dung : .
                         <br>
 
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover text-center">
                                 <thead>
                                     <tr role="row" class="bg-primary">
-                                        <th class="text-center text-white">Đuôi số tiền</th>
+                                        <th class="text-center text-white">Nội dung</th>
                                         <th class="text-center text-white">Số cuối</th>
                                         <th class="text-center text-white">Tiền nhận</th>
 
@@ -1487,55 +1512,55 @@ padding: 20px;
                                    
 
                                     <tr>
-                                    <td><b> 40 </b></td>
+                                    <td><b> D0 </b></td>
                                     <td><code> 0 </code></td>
                                     <td><b>x8 tiền cược</b></td>
                                 </tr>
 
                                 <tr>
-                                <td><b> 41 </b></td>
+                                <td><b> D1 </b></td>
                                 <td><code>1 </code></td>
                                 <td><b>x8 tiền cược</b></td>
                             </tr>
 
                             <tr>
-                            <td><b> 42 </b></td>
+                            <td><b> D2 </b></td>
                             <td><code> 2</code></td>
                             <td><b>x8 tiền cược</b></td>
                         </tr>
 
                         <tr>
-                        <td><b> 43 </b></td>
+                        <td><b> D3 </b></td>
                         <td><code>3 </code></td>
                         <td><b>x8 tiền cược</b></td>
                     </tr>
                     <tr>
-                    <td><b> 44 </b></td>
+                    <td><b> D4 </b></td>
                     <td><code>4 </code></td>
                     <td><b>x8 tiền cược</b></td>
                 </tr>
                 <tr>
-                <td><b> 45 </b></td>
+                <td><b> D5 </b></td>
                 <td><code>5</code></td>
                 <td><b>x8 tiền cược</b></td>
             </tr>
             <tr>
-            <td><b>46  </b></td>
+            <td><b>D6  </b></td>
             <td><code>6 </code></td>
             <td><b>x8 tiền cược</b></td>
         </tr>
         <tr>
-        <td><b> 47 </b></td>
+        <td><b> D7 </b></td>
         <td><code>7 </code></td>
         <td><b>x8 tiền cược</b></td>
     </tr>
     <tr>
-    <td><b> 48 </b></td>
+    <td><b> D8 </b></td>
     <td><code>8 </code></td>
     <td><b>x8 tiền cược</b></td>
 </tr>
 <tr>
-<td><b> 49 </b></td>
+<td><b> D9 </b></td>
 <td><code>9</code></td>
 <td><b>x8 tiền cược</b></td>
 </tr>
@@ -1550,7 +1575,7 @@ padding: 20px;
                                 </tbody>
                             </table>
                         </div>
-                        <br> - Nếu mã giao dịch có số cuối trùng với 1 trong 3 số trên trong telegram md5, bạn sẽ chiến thắng.
+                        <p class="left-align"> - Đoán Số Tiền thắng sẽ = <b>Tiền cược * Tỉ lệ</b></p>
 
 
                     </div>
@@ -1567,9 +1592,8 @@ padding: 20px;
 
 
                         <div class="panel-body turn" turn-tab="6" style="padding-top: 0px;">
-                            - <b>1 phần 3</b> là một game vô cùng dễ, tính kết quả bằng <b>1 số cuối mã giao
-                                dịch Telegram md5</b>. <br>
-                            - Cách chơi rất đơn giản, - Chuyển tiền vào một trong các tài khoản : <div
+                        <p class="left-align">- Cách chơi vô cùng đơn giản</p>
+                        <p class="left-align">- Dùng ví MOMO chuyển tiền vào một trong các tài khoản:</p><div
                                 class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
@@ -1584,14 +1608,14 @@ padding: 20px;
                                 </table>
                             </div> <br>
                            
-                            Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : .
+                            với nội dung : .
                             <br>
 
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
                                         <tr role="row" class="bg-primary">
-                                            <th class="text-center text-white">Đuôi số tiền</th>
+                                            <th class="text-center text-white">Nội dung</th>
                                             <th class="text-center text-white">Số cuối</th>
                                             <th class="text-center text-white">Tiền nhận</th>
 
@@ -1601,36 +1625,36 @@ padding: 20px;
                                         class="">
 
                                         <tr>
-                                            <td><b>21</b></td>
+                                            <td><b>N1</b></td>
                                             <td><code>1</code> <code>2</code> <code>3</code></td>
-                                            <td><b>x3.5 tiền cược</b></td>
+                                            <td><b>x3 tiền cược</b></td>
                                         </tr>
 
                                         <tr>
-                                            <td><b>22</b></td>
+                                            <td><b>N2</b></td>
                                             <td><code>4</code> <code>5</code> <code>6</code></td>
-                                            <td><b>x3.5 tiền cược</b></td>
+                                            <td><b>x3tiền cược</b></td>
                                         </tr>
 
                                         <tr>
-                                            <td><b>23</b></td>
+                                            <td><b>N3</b></td>
                                             <td><code>7</code> <code>8</code> <code>9</code></td>
-                                            <td><b>x3.5 tiền cược</b></td>
+                                            <td><b>x3tiền cược</b></td>
                                         </tr>
 
 
                                     </tbody>
                                 </table>
                             </div>
-                            <br> - Nếu mã giao dịch có số cuối trùng với 1 trong 3 số trên trong telegram md5, bạn sẽ chiến thắng.
+                            <p class="left-align"> - 1 Phần 3 Tiền thắng sẽ = <b>Tiền cược * Tỉ lệ</b></p>
 
 
                         </div>
 
 
                         <div class="panel-body turn" turn-tab="4" style="padding-top: 0px;">
-                            - Đoán số là một game vô cùng đơn giản, tỉ lệ ăn khá cao. <br>
-                            - Cách chơi rất đơn giản, - Chuyển tiền vào một trong các tài khoản : <div
+                        <p class="left-align">- Cách chơi vô cùng đơn giản</p>
+                        <p class="left-align">- Dùng ví MOMO chuyển tiền vào một trong các tài khoản:</p> <div
                                 class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
@@ -1645,21 +1669,22 @@ padding: 20px;
                                 </table>
                             </div> <br>
                            
-                            Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : <code>số từ 0-9</code>.
+                            với nội dung : <code>số từ 0-9</code>.
 
                             <br>
                             - Nếu số cuối mã giao dịch của telegram MD5 trùng với số nội dung bạn nhập, bạn sẽ nhận được <b>x8 tiền
                                 cược</b>
 
                             <br>
-                            - Ví dụ bạn chuyển <b>20.000 vnđ</b> Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   <b>0</b>, số cuối mã giao dịch của telegram MD5 là
+                            - Ví dụ bạn chuyển <b>20.000 vnđ</b> với nội dung <b>0</b>, số cuối mã giao dịch của telegram MD5 là
                             <b>0</b> bạn sẽ nhận được <b>40.000 vnđ</b>
 
 
                         </div>
 
                         <div class="panel-body turn" turn-tab="5" style="padding-top: 0px;">
-                            - Cách chơi rất đơn giản, Chuyển tiền vào một trong các tài khoản : <div
+                        <p class="left-align">- Cách chơi vô cùng đơn giản</p>
+                        <p class="left-align">- Dùng ví MOMO chuyển tiền vào một trong các tài khoản:</p> <div
                                 class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover text-center">
                                     <thead>
@@ -1673,19 +1698,46 @@ padding: 20px;
                                     </tbody>
                                 </table>
                             </div> <br>
-                            
-                            Với số tiền cần chuyển theo đuôi  > VD: Bạn đặt Lẻ 10.000. Hãy chuyển số tiền: 10011   : <code>19</code>.
+                            với nội dung : <b>S</b>
+                            <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover text-center">
+                                <thead>
+                                    <tr role="row" class="bg-primary">
+                                        <th class="text-center text-white">Nội dung</th>
+                                        <th class="text-center text-white">Tổng 3 số</th>
+                                        <th class="text-center text-white">Tỉ lệ</th>
 
-                            <br>
-                            - Kết quả là tính tổng 3 số cuối của mã giao dịch. <br>
+                                    </tr>
+                                </thead>
 
-                            - Nếu tổng 3 số cuối bằng <b>7</b>, <b>17</b>, <b>27</b> => Nhận <b>x2 tiền cược</b>
-                            <br>
-                            - Nếu tổng 3 số cuối bằng <b>8</b>, <b>18</b> => Nhận <b>x3 tiền cược</b> <br>
+                           
+                        
+                                <tbody role="alert" aria-live="polite" aria-relevant="all" id="result-table"
+                                    class="">
 
-                            - Nếu tổng 3 số cuối bằng <b>9</b>, <b>19</b> => Nhận <b>x3.5 tiền cược</b> <br>
-                            <br>
+                                    <tr>
+                                        <td><b>S</b></td>
+                                        <td><code>7</code> <code>17</code> <code>27</code></td>
+                                        <td><b>x2</b></td>
+                                    </tr>
 
+                                    <tr>
+                                        <td><b>S</b></td>
+                                        <td> <code>8</code> <code>18</code></td>
+                                        <td><b>x3</b></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><b>S</b></td>
+                                        <td><code>9</code> <code>19</code></td>
+                                        <td><b>x3.5</b></td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="left-align"> - Tổng 3 Tiền thắng sẽ = <b>Tiền cược * Tỉ lệ</b></p>
 
 
                         </div>
@@ -1931,7 +1983,7 @@ margin: auto;">
             </div>
             <div class="modal-body">
                 <p>TOP sẽ dược trao vào 24h chủ nhật hàng tuần.</p>
-                <div id="topplaygame2s2"><p>- TOP 1 : 500.000 VNĐ</p><p>- TOP 2 : 400.000 VNĐ</p><p>- TOP 3 : 300.000 VNĐ</p><p>- TOP 4 : 100.000 VNĐ</p><p>- TOP 5 : 50.000 VNĐ</p></div>
+                <div id="topplaygame22"> </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" style="border-radius: 0;"
@@ -2446,6 +2498,11 @@ function invalue() {
         type: 'POST',
         dataType: 'json',
         success: function (_0x1022x2) {
+     
+            var formattedSum = Number(_0x1022x2.sumnvn).toLocaleString('en-US');
+            $('#nvnmoney').html(formattedSum+'đ');
+            
+       
             var _0x1022x3 = '';
             var _0x1022x4 = '';
             var _0x1022x5 = '';
@@ -2671,6 +2728,7 @@ font-size: 9px;"><font color="green">`}` + kk(_0x1022xa.min) + `${'</font> -> <f
 \
     </tr>`}`
             });
+
             $('#game_1').html(_0x1022x3);
             $('#game_3').html(_0x1022x3);
             $('#game_6').html(_0x1022x3);
@@ -2699,6 +2757,13 @@ function onmsg() {
             $('#workrun').html(`${'<font color="white" style="text-shadow: 0 0 0.2em #ff0000, 0 0 0.2em #ff0000,  0 0 0.2em #ff0000"><b>'}` + _0x2bfex2.workrun + `${'</b></font>'}`);
             $('#noidung_thongbao').html(_0x2bfex2.note);
             $('#notemd5').html(_0x2bfex2.notemd5);
+            var formattedSum = Number(_0x2bfex2.sumnvn).toLocaleString('en-US');
+            $('#nvnmoney').html(formattedSum+'đ');
+            
+
+
+         
+
             $('#noidung_thongbaoakditmemay').html(_0x2bfex2.note);
             $('#modal_thongbao').modal()
         }
