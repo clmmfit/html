@@ -1983,7 +1983,7 @@ margin: auto;">
             </div>
             <div class="modal-body">
                 <p>TOP sẽ dược trao vào 24h chủ nhật hàng tuần.</p>
-                <div id="topplaygame2s2"><p>- TOP 1 : 50.000 VNĐ</p><p>- TOP 2 : 40.000 VNĐ</p><p>- TOP 3 : 30.000 VNĐ</p><p>- TOP 4 : 20.000 VNĐ</p><p>- TOP 5 : 10.000 VNĐ</p></div>
+                
                 <div id="topplaygame22"> </div>
             </div>
             <div class="modal-footer">
