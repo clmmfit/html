@@ -273,9 +273,7 @@ margin: auto;">
                         </div>
                         <div class="col-xs-6">
                             <h4>
-                                <span data-action="phan-thuong" class="label label-danger" style="cursor: pointer;">
-                                    <i class="fa fa-gift"></i>&nbsp;&nbsp;Phần thưởng
-                                </span>
+                                
                             </h4>
                         </div>
                     </div>
